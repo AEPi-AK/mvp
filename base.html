@@ -63,6 +63,19 @@
 
     </div> <!--site-wrapper-->
 
+    <script>
+      // ¯\_(ツ)_/¯
+      // This adds an "active" class to the <a> tag corresponding
+      // to the file we're currently on.
+      var currentFile = window.location.pathname.split("/").pop() || "index.html";
+      var navbarItems = [].slice.call(document.getElementsByClassName("masthead-nav")[0].children);
+      navbarItems.forEach(function(li) {
+        var anchor = li.children[0];
+        if (currentFile === anchor.href.split("/").pop()) {
+          li.classList.add("active");
+        }
+      });
+    </script>
   </body>
 
 </html
